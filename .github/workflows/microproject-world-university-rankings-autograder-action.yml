@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Checkout
       id: sr-checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4.1.7
     - name: Setup Python
       uses: actions/setup-python@v5.1.0
       with:
