@@ -36,7 +36,7 @@ jobs:
         src_path: release/microproject-world-university-rankings
         dst_path: microproject-world-university-rankings
         copy: '.github/classroom : .github/classroom, requirements.txt : requirements.txt'
-    - run: pip install -r microproject-world-university-rankings/requirements.txt
+    - run: pip install --no-binary -r microproject-world-university-rankings/requirements.txt
     - name: Run cell-replace
       run: python cell-replace/cell-replace.py microproject-world-university-rankings/microproject-world-university-rankings.ipynb release/microproject-world-university-rankings/microproject-world-university-rankings.ipynb
     - name: Generate Test Script
