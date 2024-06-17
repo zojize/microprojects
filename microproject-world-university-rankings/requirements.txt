@@ -1,5 +1,5 @@
 matplotlib
+numpy==1.26.4
 pandas==2.0.3
---no-binary=pandas
 jupyter2pytest
 pytest
