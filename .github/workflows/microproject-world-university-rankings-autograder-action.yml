@@ -52,3 +52,12 @@ jobs:
         test_suite: autograding
         step_summary: true
         all_or_nothing: true
+    - name: Log telemetry data
+      uses: illinois/telemetry@dev_zojize-testing
+      with:
+        endpoint: http://141.142.220.106:10710/telemetry
+        log_date: true
+        user: ${{ github.actor }}
+        autograding_status: ${{ steps.autograding.outcome }}
+        points: ${{ steps.autograding.outputs.Points }}
+        assignment: mp1-autograding
