@@ -57,7 +57,6 @@ jobs:
       with:
         endpoint: http://141.142.220.106:10710/telemetry
         log_date: true
-        username: ${{ github.actor }}
         assignment: microproject-world-university-rankings
         upstream_repo: dsdiscovery/microprojects
         autograding_status: ${{ steps.autograding.outcome }}
