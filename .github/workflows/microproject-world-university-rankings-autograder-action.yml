@@ -18,7 +18,7 @@ jobs:
         cache-dependency-path: microproject-world-university-rankings/requirements.txt
     - name: Checkout release repository
       id: release-checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4.1.7
       with:
         repository: dsdiscovery/microprojects
         ref: microproject-world-university-rankings
@@ -57,7 +57,8 @@ jobs:
       with:
         endpoint: http://141.142.220.106:10710/telemetry
         log_date: true
-        user: ${{ github.actor }}
+        username: ${{ github.actor }}
+        assignment: microproject-world-university-rankings
+        upstream_repo: dsdiscovery/microprojects
         autograding_status: ${{ steps.autograding.outcome }}
         points: ${{ steps.autograding.outputs.Points }}
-        assignment: mp1-autograding
