@@ -53,7 +53,7 @@ jobs:
         step_summary: true
         all_or_nothing: true
     - name: Log telemetry data
-      uses: illinois/telemetry@dev_zojize-testing
+      uses: illinois/telemetry@dev_zojize
       with:
         endpoint: http://141.142.220.106:10710/telemetry
         log_date: true
