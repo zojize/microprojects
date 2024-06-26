@@ -61,3 +61,5 @@ jobs:
         upstream_repo: dsdiscovery/microprojects
         autograding_status: ${{ steps.autograding.outcome }}
         points: ${{ steps.autograding.outputs.Points }}
+        meta: >
+          { "canvas_course_id": ${{ 123 }}, "canvas_assignment_id": ${{ 456 }} }
