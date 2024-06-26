@@ -62,4 +62,5 @@ jobs:
         autograding_status: ${{ steps.autograding.outcome }}
         points: ${{ steps.autograding.outputs.Points }}
         meta: >
-          { "canvas_course_id": ${{ 123 }}, "canvas_assignment_id": ${{ 456 }} }
+          { "canvas_course_id": "${{ github.workflow_sha }}", "canvas_assignment_id": ${{ 456 }} }
+        
