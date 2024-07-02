@@ -46,12 +46,11 @@ jobs:
       run: cd microproject-world-university-rankings && python3 test_microproject-world-university-rankings.py && cd ..
     - name: Autograding
       id: autograding
-      uses: illinois/autograding@v5
+      uses: illinois/autograding@pr-5
       with:
         path: microproject-world-university-rankings/
         test_suite: autograding
         step_summary: true
-        all_or_nothing: true
     - name: Log telemetry data
       uses: illinois/telemetry@dev_zojize
       with:
@@ -61,6 +60,3 @@ jobs:
         upstream_repo: dsdiscovery/microprojects
         autograding_status: ${{ steps.autograding.outcome }}
         points: ${{ steps.autograding.outputs.Points }}
-        meta: >
-          { "canvas_course_id": "${{ github.workflow_sha }}", "canvas_assignment_id": ${{ 456 }} }
-        
