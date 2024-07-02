@@ -1,6 +1,10 @@
 name: microproject-world-university-rankings Grading
 'on':
   workflow_dispatch: {}
+permissions:
+  actions: write
+  contents: read
+  checks: read
 jobs:
   autograding:
     name: autograding
@@ -13,12 +17,12 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.11'
+        python-version: '3.12'
         cache: pip
         cache-dependency-path: microproject-world-university-rankings/requirements.txt
     - name: Checkout release repository
       id: release-checkout
-      uses: actions/checkout@v4.1.7
+      uses: actions/checkout@v4
       with:
         repository: dsdiscovery/microprojects
         ref: microproject-world-university-rankings
@@ -36,7 +40,6 @@ jobs:
         src_path: release/microproject-world-university-rankings
         dst_path: microproject-world-university-rankings
         copy: '.github/classroom : .github/classroom, requirements.txt : requirements.txt'
-    - run: cat microproject-world-university-rankings/requirements.txt
     - run: pip install -r microproject-world-university-rankings/requirements.txt
     - name: Run cell-replace
       run: python cell-replace/cell-replace.py microproject-world-university-rankings/microproject-world-university-rankings.ipynb release/microproject-world-university-rankings/microproject-world-university-rankings.ipynb
