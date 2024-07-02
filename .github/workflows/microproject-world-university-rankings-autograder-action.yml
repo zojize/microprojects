@@ -55,6 +55,7 @@ jobs:
         test_suite: autograding
         step_summary: true
     - name: Log telemetry data
+      if: ${{ always() }}
       uses: illinois/telemetry@dev_zojize
       with:
         endpoint: http://141.142.220.106:10710/telemetry
